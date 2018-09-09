@@ -3,6 +3,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
+
+The [Movie DB](https://www.themoviedb.org/account/signup) is used here. API key is required to be inserted in file "src/modules/movie-browser/movie-browser.service.js" at 
+const MOVIE_DB_API_KEY = '<API_KEY>';
+
+
 ## Table of Contents
 
 - [Folder Structure](#folder-structure)
@@ -22,30 +27,26 @@ movie-catalogue/
   src/
     modules/
       common/
+        loader.component.js
         redux.helpers.js
+        scroll.helpers.js
       movie-browser/
+        movie-card/
+          movie-card.component.js
+        movie-list/
+          movie-list.component.js
+        movie-modal/
+          movie-modal.actions.js
+          movie-modal.container.js
+          movie-modal.reducer.js
+        movie-browser.actions.js
         movie-browser.container.js
+        movie-browser.helpers.js
         movie-browser.reducers.js
-        movie-browser.srvice.js
+        movie-browser.service.js
     App.css
     App.js
     index.css
     index.js
     store.js
 ```
-
-For the project to build, **these files must exist with exact filenames**:
-
-* `public/index.html` is the page template;
-* `src/index.js` is the JavaScript entry point.
-
-You can delete or rename the other files.
-
-You may create subdirectories inside `src`. For faster rebuilds, only files inside `src` are processed by Webpack.<br>
-You need to **put any JS and CSS files inside `src`**, otherwise Webpack won’t see them.
-
-Only files inside `public` can be used from `public/index.html`.<br>
-Read instructions below for using assets from JavaScript and HTML.
-
-You can, however, create more top-level directories.<br>
-They will not be included in the production build so you can use them for things like documentation.
