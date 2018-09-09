@@ -15,7 +15,7 @@ export const createReducer = (initialState = {}, actionHandlerKeyFuncs = {}) => 
     };
   }
   
-  // e.g. createAsyncActionCreator('GET_TOP_MOVIES', getTopMovies, {page: 1})
+  // e.g. createAsyncActionCreator('GET_POPULAR_MOVIES', getPopularMovies, {page: 1})
   // to capture the requestParams as part of the start action for logging transparency
   export const createAsyncActionCreator = (actionType, asyncRequestFn, requestParams) => {
     return (dispatch) => {

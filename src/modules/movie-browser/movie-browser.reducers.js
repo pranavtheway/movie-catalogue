@@ -1,11 +1,7 @@
 import {combineReducers} from 'redux';
 import { createReducer, createAsyncReducer } from '../common/redux.helpers';
 import { keys as movieActionKeys } from './movie-browser.actions';
-
-// Placeholder reducer for our movie modal
-const movieModalReducer = createReducer({ isOpen: false }, {
-
-});
+import movieModalReducer from './movie-modal/movie-modal.reducer';
 
 // This will create a new state with both the existing 
 // movies and new pages of movies
@@ -28,8 +24,8 @@ const moviesSuccessReducer = (state, action) => {
 // Combines our movie browser related reducers to build our movieBrowser reducer
 const movieBrowserReducer = combineReducers({
   movieModal: movieModalReducer,
-  topMovies: createAsyncReducer(movieActionKeys.GET_TOP_MOVIES, {
-    [`${movieActionKeys.GET_TOP_MOVIES}_SUCCESS`]: moviesSuccessReducer
+  popularMovies: createAsyncReducer(movieActionKeys.GET_POPULAR_MOVIES, {
+    [`${movieActionKeys.GET_POPULAR_MOVIES}_SUCCESS`]: moviesSuccessReducer
   }),
   movieSearch: createAsyncReducer(movieActionKeys.SEARCH_MOVIES, {
     [`${movieActionKeys.SEARCH_MOVIES}_SUCCESS`]: moviesSuccessReducer
